@@ -19,12 +19,35 @@
 	font-weight: 700;
 }
 
-.cost__current {
+.cost__current, .ship__selection {
 	font-size: 1.25em;
 	font-weight: 700;
 }
 
 .cost__current--danger {
 	color: red;
+}
+
+
+.ship__item {
+	-webkit-box-align: baseline;
+	-ms-flex-align: baseline;
+	align-items: baseline;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.ship__item:hover {
+	-webkit-text-stroke: thin skyblue;
+	text-stroke: thin skyblue;
+}
+
+.item__value {
+	font-size: 1.25em;
+	font-weight: 700;
 }
 

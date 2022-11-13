@@ -44,7 +44,7 @@ To set up the environment for this project:
 ## Running
 Due to CORS errors with loading the ship-builder.json, to test on your own machine, you you will need to run the project from a local server.
 1. Run `npm install http-server -g` to install a global package that can create a local server
-1. Run `http-server` to run the server. Add the option `-o /dist/index.html` to also launch the site in a browser.
+1. Run `http-server -p 9000` to run the server on port 9000. Add the option `-o /dist/index.html` to also launch the site in a browser.
 
 ## Building for Production
 1. Compile by running `grunt` from the base folder. 

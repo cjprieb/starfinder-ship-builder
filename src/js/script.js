@@ -239,8 +239,7 @@ if (typeof window.Clipboard.name !== undefined && window.Clipboard.name == 'e') 
 | SHIP
 |------------------------------------------------------------------------------------------
 */
-function Ship(json) {
-	
+function Ship(json) {	
 	this.app = new Vue({
         /*
         |----------------------------------------------------------------------------------
@@ -249,308 +248,331 @@ function Ship(json) {
         /*
         |----------------------------------------------------------------------------------
         */
-		data: {
-			data: json,
-			json: "",
-			params: {},
-			// paramsReset: {"ablativeArmorId":"none","ablativeArmorByPosition":{"forward":0,"aft":0,"port":0,"starboard":0},"antiHackingSystemsId":"none","antiPersonnelWeaponId":"none","armorId":"mk-8","armorMaterialId":"none","computerCountermeasures":{"alarm":false,"fakeShell":false,"feedback":false,"firewall":false,"lockout":false,"shockGridId":"none","wipe":false},"computerId":"mk-3-trinode","crewQuartersId":"luxurious","crewSkills":{"captain":{"countOfficers":0,"hasRole":true,"skills":{"bluff":{"modifier":0,"ranks":0},"computers":{"modifier":0,"ranks":0},"diplomacy":{"modifier":0,"ranks":0},"engineering":{"modifier":0,"ranks":0},"gunnery":{"modifier":0},"intimidate":{"modifier":0,"ranks":0},"perception":{"modifier":0,"ranks":0},"piloting":{"modifier":0,"ranks":0}}},"engineer":{"countOfficers":1,"countOfficerCrew":0,"hasRole":true,"skills":{"computers":{"modifier":0,"ranks":0},"engineering":{"modifier":0,"ranks":0}}},"gunner":{"countOfficers":1,"countOfficerCrew":0,"hasRole":true,"skills":{"computers":{"modifier":0,"ranks":0},"engineering":{"modifier":0,"ranks":0},"gunnery":{"modifier":0}}},"pilot":{"countOfficers":1,"countOfficerCrew":0,"hasRole":true,"skills":{"computers":{"modifier":0,"ranks":0},"diplomacy":{"modifier":0,"ranks":0},"engineering":{"modifier":0,"ranks":0},"gunnery":{"modifier":0},"intimidate":{"modifier":0,"ranks":0},"piloting":{"modifier":0,"ranks":0}}},"scienceOfficer":{"countOfficers":1,"countOfficerCrew":0,"hasRole":true,"skills":{"computers":{"modifier":0,"ranks":0},"life-science":{"modifier":0,"ranks":0},"physical-science":{"modifier":0,"ranks":0}}},"chiefMate":{"countOfficers":1,"countOfficerCrew":0,"hasRole":false,"skills":{"acrobatics":{"modifier":0,"ranks":0},"athletics":{"modifier":0,"ranks":0}}},"magicOfficer":{"countOfficers":1,"countOfficerCrew":0,"hasRole":false,"skills":{"mysticism":{"modifier":0,"ranks":0}}}},"ctTim":0,"ctTimAll":0,"customFrameBaseId":"light-freighter","customComponents":[],"dedicatedComputerId":"basic-computer","defensiveCountermeasuresId":"mk-7","defensiveCountermeasuresMaterialId":"none","deflectorShieldId":"none","driftEngineId":"signal-basic","expansionBayIds":["cargo-hold","drop-pod","escape-pods","guest-quarters-luxurious","medical-bay","passenger-seating","none"],"fortifiedHullId":"none","frameId":"battleship","hasAlgalShielding":0,"hasAutoDestruct":0,"hasBiometricLocks":0,"hasColonyShipFramework":0,"hasConsciousnessUplink":0,"hasCrew":1,"hasDataNet":0,"hasEmergencyAccelerator":0,"hasHiveJoining":0,"hasHolographicMantle":0,"hasPowersap":0,"hasReconfigurationSystem":0,"hasRootSystem":0,"hasSelfDestructSystem":0,"hasSpaceStationFramework":0,"isSetDefaultCrewSkillValues":0,"isUseStrictRules":1,"powerCoreIds":["gateway-ultra","none","none"],"powerCoreSpecialMaterials":["none","none","none"],"networkNodeId":"none","reinforcedBulkheadId":"none","roboticAppendageId":"none","secondaryComputerId":"basic-computer","sensorsId":"none","sensorsMaterialId":"none","shieldType":"shields","shieldsByPosition":{"forward":0,"aft":0,"port":0,"starboard":0},"shieldsId":"none","shipConcept":"The product of a decade of Ringworks research and development, the Specter represents the first known successful use of quantum defender technology on a capital ship.","shipName":"Ringworks Specter","sources":{"pw":true,"som":true},"thrustersId":"g6","thrustersMaterialId":"none","thrustersBoosterId":"none","thrustersBoosterMaterialId":"none","tierId":"16","version":"1.0.1","viId":"none","viHoloProjectorId":"none","viSkillExpanderId":"none","weaponMounts":{"forward":[{"weaponId":"none","weight":"capital","templateWeight":"capital","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}],"aft":[{"weaponId":"none","weight":"light","templateWeight":"light","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}],"port":[{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"light","templateWeight":"light","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}],"starboard":[{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"light","templateWeight":"light","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}],"turret":[{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}]}},
-			paramsReset: {
-				ablativeArmorId: "none",
-                ablativeArmorByPosition: {
-                    forward: 0,
-                    aft: 0,
-                    port: 0,
-                    starboard: 0
-                },
-				antiHackingSystemsId: "none",
-				antiPersonnelWeaponId:"none",
-				armorId:"none",
-				armorMaterialId: "none",
-				computerCountermeasures: {
-					alarm: false,
-					fakeShell: false,
-					feedback: false,
-					firewall: false,
-					lockout: false,
-					shockGridId: "none",
-					wipe: false
-				},
-				computerId: "basic-computer",
-				crewQuartersId:"common",
-				crewSkills: {
-					captain: {
-						countOfficers: 0,
-						hasRole: true,
-						skills: {
-							bluff: {
-								modifier: 0,
-								ranks: 0
-							},
-							computers: {
-								modifier: 0,
-								ranks: 0
-							},
-							diplomacy: {
-								modifier: 0,
-								ranks: 0
-							},
-							engineering: {
-								modifier: 0,
-								ranks: 0
-							},
-							gunnery: {
-								modifier: 0
-							},
-							intimidate: {
-								modifier: 0,
-								ranks: 0
-							},
-							perception: {
-								modifier: 0,
-								ranks: 0
-							},
-							piloting: {
-								modifier: 0,
-								ranks: 0
+		data: function() {
+			var storedShip = localStorage.getItem("starfinder_ship");
+			console.log("ship", storedShip);
+			var storedShip = null;
+			if (storedShip) {
+				console.log("parsing ship data");
+				storedShip = JSON.parse(storedShip);
+			}
+			console.log("storedShip", storedShip);
+			return {
+				data: json,
+				json: "",
+				params: storedShip || {},
+				// paramsReset: {"ablativeArmorId":"none","ablativeArmorByPosition":{"forward":0,"aft":0,"port":0,"starboard":0},"antiHackingSystemsId":"none","antiPersonnelWeaponId":"none","armorId":"mk-8","armorMaterialId":"none","computerCountermeasures":{"alarm":false,"fakeShell":false,"feedback":false,"firewall":false,"lockout":false,"shockGridId":"none","wipe":false},"computerId":"mk-3-trinode","crewQuartersId":"luxurious","crewSkills":{"captain":{"countOfficers":0,"hasRole":true,"skills":{"bluff":{"modifier":0,"ranks":0},"computers":{"modifier":0,"ranks":0},"diplomacy":{"modifier":0,"ranks":0},"engineering":{"modifier":0,"ranks":0},"gunnery":{"modifier":0},"intimidate":{"modifier":0,"ranks":0},"perception":{"modifier":0,"ranks":0},"piloting":{"modifier":0,"ranks":0}}},"engineer":{"countOfficers":1,"countOfficerCrew":0,"hasRole":true,"skills":{"computers":{"modifier":0,"ranks":0},"engineering":{"modifier":0,"ranks":0}}},"gunner":{"countOfficers":1,"countOfficerCrew":0,"hasRole":true,"skills":{"computers":{"modifier":0,"ranks":0},"engineering":{"modifier":0,"ranks":0},"gunnery":{"modifier":0}}},"pilot":{"countOfficers":1,"countOfficerCrew":0,"hasRole":true,"skills":{"computers":{"modifier":0,"ranks":0},"diplomacy":{"modifier":0,"ranks":0},"engineering":{"modifier":0,"ranks":0},"gunnery":{"modifier":0},"intimidate":{"modifier":0,"ranks":0},"piloting":{"modifier":0,"ranks":0}}},"scienceOfficer":{"countOfficers":1,"countOfficerCrew":0,"hasRole":true,"skills":{"computers":{"modifier":0,"ranks":0},"life-science":{"modifier":0,"ranks":0},"physical-science":{"modifier":0,"ranks":0}}},"chiefMate":{"countOfficers":1,"countOfficerCrew":0,"hasRole":false,"skills":{"acrobatics":{"modifier":0,"ranks":0},"athletics":{"modifier":0,"ranks":0}}},"magicOfficer":{"countOfficers":1,"countOfficerCrew":0,"hasRole":false,"skills":{"mysticism":{"modifier":0,"ranks":0}}}},"ctTim":0,"ctTimAll":0,"customFrameBaseId":"light-freighter","customComponents":[],"dedicatedComputerId":"basic-computer","defensiveCountermeasuresId":"mk-7","defensiveCountermeasuresMaterialId":"none","deflectorShieldId":"none","driftEngineId":"signal-basic","expansionBayIds":["cargo-hold","drop-pod","escape-pods","guest-quarters-luxurious","medical-bay","passenger-seating","none"],"fortifiedHullId":"none","frameId":"battleship","hasAlgalShielding":0,"hasAutoDestruct":0,"hasBiometricLocks":0,"hasColonyShipFramework":0,"hasConsciousnessUplink":0,"hasCrew":1,"hasDataNet":0,"hasEmergencyAccelerator":0,"hasHiveJoining":0,"hasHolographicMantle":0,"hasPowersap":0,"hasReconfigurationSystem":0,"hasRootSystem":0,"hasSelfDestructSystem":0,"hasSpaceStationFramework":0,"isSetDefaultCrewSkillValues":0,"isUseStrictRules":1,"powerCoreIds":["gateway-ultra","none","none"],"powerCoreSpecialMaterials":["none","none","none"],"networkNodeId":"none","reinforcedBulkheadId":"none","roboticAppendageId":"none","secondaryComputerId":"basic-computer","sensorsId":"none","sensorsMaterialId":"none","shieldType":"shields","shieldsByPosition":{"forward":0,"aft":0,"port":0,"starboard":0},"shieldsId":"none","shipConcept":"The product of a decade of Ringworks research and development, the Specter represents the first known successful use of quantum defender technology on a capital ship.","shipName":"Ringworks Specter","sources":{"pw":true,"som":true},"thrustersId":"g6","thrustersMaterialId":"none","thrustersBoosterId":"none","thrustersBoosterMaterialId":"none","tierId":"16","version":"1.0.1","viId":"none","viHoloProjectorId":"none","viSkillExpanderId":"none","weaponMounts":{"forward":[{"weaponId":"none","weight":"capital","templateWeight":"capital","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}],"aft":[{"weaponId":"none","weight":"light","templateWeight":"light","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}],"port":[{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"light","templateWeight":"light","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}],"starboard":[{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"light","templateWeight":"light","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}],"turret":[{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}]}},
+				paramsReset: {
+					ablativeArmorId: "none",
+					ablativeArmorByPosition: {
+						forward: 0,
+						aft: 0,
+						port: 0,
+						starboard: 0
+					},
+					antiHackingSystemsId: "none",
+					antiPersonnelWeaponId:"none",
+					armorId:"none",
+					armorMaterialId: "none",
+					computerCountermeasures: {
+						alarm: false,
+						fakeShell: false,
+						feedback: false,
+						firewall: false,
+						lockout: false,
+						shockGridId: "none",
+						wipe: false
+					},
+					computerId: "basic-computer",
+					crewQuartersId:"common",
+					crewSkills: {
+						captain: {
+							countOfficers: 0,
+							hasRole: true,
+							skills: {
+								bluff: {
+									modifier: 0,
+									ranks: 0
+								},
+								computers: {
+									modifier: 0,
+									ranks: 0
+								},
+								diplomacy: {
+									modifier: 0,
+									ranks: 0
+								},
+								engineering: {
+									modifier: 0,
+									ranks: 0
+								},
+								gunnery: {
+									modifier: 0
+								},
+								intimidate: {
+									modifier: 0,
+									ranks: 0
+								},
+								perception: {
+									modifier: 0,
+									ranks: 0
+								},
+								piloting: {
+									modifier: 0,
+									ranks: 0
+								}
 							}
-						}
-					}, // captain
-					engineer: {
-						countOfficers: 1,
-						countOfficerCrew: 0,
-						hasRole: true,
-						skills: {
-							computers: {
-								modifier: 0,
-								ranks: 0
-							},
-							engineering: {
-								modifier: 0,
-								ranks: 0
+						}, // captain
+						engineer: {
+							countOfficers: 1,
+							countOfficerCrew: 0,
+							hasRole: true,
+							skills: {
+								computers: {
+									modifier: 0,
+									ranks: 0
+								},
+								engineering: {
+									modifier: 0,
+									ranks: 0
+								}
 							}
-						}
-					}, // engineer
-					gunner: {
-						countOfficers: 1,
-						countOfficerCrew: 0,
-						hasRole: true,
-						skills: {
-							computers: {
-								modifier: 0,
-								ranks: 0
-							},
-							engineering: {
-								modifier: 0,
-								ranks: 0
-							},
-							gunnery: {
-								modifier: 0
+						}, // engineer
+						gunner: {
+							countOfficers: 1,
+							countOfficerCrew: 0,
+							hasRole: true,
+							skills: {
+								computers: {
+									modifier: 0,
+									ranks: 0
+								},
+								engineering: {
+									modifier: 0,
+									ranks: 0
+								},
+								gunnery: {
+									modifier: 0
+								}
 							}
-						}
-					}, // gunner
-					pilot: {
-						countOfficers: 1,
-						countOfficerCrew: 0,
-						hasRole: true,
-						skills: {
-							computers: {
-								modifier: 0,
-								ranks: 0
-							},
-							diplomacy: {
-								modifier: 0,
-								ranks: 0
-							},
-							engineering: {
-								modifier: 0,
-								ranks: 0
-							},
-							gunnery: {
-								modifier: 0
-							},
-							intimidate: {
-								modifier: 0,
-								ranks: 0
-							},
-							piloting: {
-								modifier: 0,
-								ranks: 0
-							},
-						}
-					}, // pilot
-					scienceOfficer: {
-						countOfficers: 1,
-						countOfficerCrew: 0,
-						hasRole: true,
-						skills: {
-							computers: {
-								modifier: 0,
-								ranks: 0
-							},
-							"life-science": {
-								modifier: 0,
-								ranks: 0
-							},
-							"physical-science": {
-								modifier: 0,
-								ranks: 0
-							},
-						}
-					}, // scienceOfficer
-					chiefMate: {
-						countOfficers: 1,
-						countOfficerCrew: 0,
-						hasRole: false,
-						skills: {
-							acrobatics: {
-								modifier: 0,
-								ranks: 0
-							},
-							athletics: {
-								modifier: 0,
-								ranks: 0
-							},
-						}
-					}, // chiefMate
-					magicOfficer: {
-						countOfficers: 1,
-						countOfficerCrew: 0,
-						hasRole: false,
-						skills: {
-							mysticism: {
-								modifier: 0,
-								ranks: 0
+						}, // gunner
+						pilot: {
+							countOfficers: 1,
+							countOfficerCrew: 0,
+							hasRole: true,
+							skills: {
+								computers: {
+									modifier: 0,
+									ranks: 0
+								},
+								diplomacy: {
+									modifier: 0,
+									ranks: 0
+								},
+								engineering: {
+									modifier: 0,
+									ranks: 0
+								},
+								gunnery: {
+									modifier: 0
+								},
+								intimidate: {
+									modifier: 0,
+									ranks: 0
+								},
+								piloting: {
+									modifier: 0,
+									ranks: 0
+								},
 							}
-						}
-					}, // magicOfficer
-				}, // crewSkills
-				ctTim: 0,
-				ctTimAll: 0,
-	            customFrameBaseId: "light-freighter",
-	            customComponents: [],
-				dedicatedComputerId: "basic-computer",
-				defensiveCountermeasuresId:"none",
-				defensiveCountermeasuresMaterialId:"none",
-				deflectorShieldId: "none",
-				driftEngineId:"none",
-				expansionBayIds:["none","none","none"],
-				fortifiedHullId: "none",
-				frameId:"light-freighter",
-				hasAlgalShielding:0, // other systems (som)
-				hasAutoDestruct:0,
-				hasBiometricLocks:0,
-				hasColonyShipFramework:0, // other systems (som)
-				hasConsciousnessUplink:0, // other systems (som)
-				hasCrew:1,
-				hasDataNet:0,
-				hasEmergencyAccelerator:0,
-				hasHiveJoining:0,    // other systems (pw)
-				hasHolographicMantle:0,
-				hasPowersap:0,       // other systems (som)
-				hasReconfigurationSystem:0,
-				hasRootSystem:0,     // other systems (som)
-				hasSelfDestructSystem:0,
-				hasSpaceStationFramework:0, // other systems (som)
-				isSetDefaultCrewSkillValues:1,
-				isUseStrictRules:1,
-				powerCoreIds:["none"],
-				powerCoreSpecialMaterials:["none"],
-				ctNetworkNodes: 0,
-				// networkNodeId: "none",
-				reinforcedBulkheadId: "none",
-				roboticAppendageId: "none",
-				secondaryComputerId: "basic-computer",
-				sensorsId:"none",
-				sensorsMaterialId: "none",
-				shieldType: "shields",
-                shieldsByPosition: {
-                    forward: 0,
-                    aft: 0,
-                    port: 0,
-                    starboard: 0
-                },
-				shieldsId:"none",
-				shipConcept:"",
-				shipName:"",
-				sources: {
-					pw: true,
-					som: true,
+						}, // pilot
+						scienceOfficer: {
+							countOfficers: 1,
+							countOfficerCrew: 0,
+							hasRole: true,
+							skills: {
+								computers: {
+									modifier: 0,
+									ranks: 0
+								},
+								"life-science": {
+									modifier: 0,
+									ranks: 0
+								},
+								"physical-science": {
+									modifier: 0,
+									ranks: 0
+								},
+							}
+						}, // scienceOfficer
+						chiefMate: {
+							countOfficers: 1,
+							countOfficerCrew: 0,
+							hasRole: false,
+							skills: {
+								acrobatics: {
+									modifier: 0,
+									ranks: 0
+								},
+								athletics: {
+									modifier: 0,
+									ranks: 0
+								},
+							}
+						}, // chiefMate
+						magicOfficer: {
+							countOfficers: 1,
+							countOfficerCrew: 0,
+							hasRole: false,
+							skills: {
+								mysticism: {
+									modifier: 0,
+									ranks: 0
+								}
+							}
+						}, // magicOfficer
+					}, // crewSkills
+					ctTim: 0,
+					ctTimAll: 0,
+					customFrameBaseId: "light-freighter",
+					customComponents: [],
+					dedicatedComputerId: "basic-computer",
+					defensiveCountermeasuresId:"none",
+					defensiveCountermeasuresMaterialId:"none",
+					deflectorShieldId: "none",
+					driftEngineId:"none",
+					expansionBayIds:["none","none","none"],
+					fortifiedHullId: "none",
+					frameId:"light-freighter",
+					hasAlgalShielding:0, // other systems (som)
+					hasAutoDestruct:0,
+					hasBiometricLocks:0,
+					hasColonyShipFramework:0, // other systems (som)
+					hasConsciousnessUplink:0, // other systems (som)
+					hasCrew:1,
+					hasDataNet:0,
+					hasEmergencyAccelerator:0,
+					hasHiveJoining:0,    // other systems (pw)
+					hasHolographicMantle:0,
+					hasPowersap:0,       // other systems (som)
+					hasReconfigurationSystem:0,
+					hasRootSystem:0,     // other systems (som)
+					hasSelfDestructSystem:0,
+					hasSpaceStationFramework:0, // other systems (som)
+					isSetDefaultCrewSkillValues:1,
+					isUseStrictRules:1,
+					powerCoreIds:["none"],
+					powerCoreSpecialMaterials:["none"],
+					ctNetworkNodes: 0,
+					// networkNodeId: "none",
+					reinforcedBulkheadId: "none",
+					roboticAppendageId: "none",
+					secondaryComputerId: "basic-computer",
+					sensorsId:"none",
+					sensorsMaterialId: "none",
+					shieldType: "shields",
+					shieldsByPosition: {
+						forward: 0,
+						aft: 0,
+						port: 0,
+						starboard: 0
+					},
+					shieldsId:"none",
+					shipConcept:"",
+					shipName:"",
+					sources: {
+						pw: true,
+						som: true,
+					},
+					thrustersId: "none",
+					thrustersMaterialId: "none",
+					thrustersBoosterId: "none",
+					thrustersBoosterMaterialId: "none",
+					tierId:"1",
+					version:"1.0.1",
+					viId: "none",
+					viHoloProjectorId:"none",
+					viSkillExpanderId:"none",
+					weaponMounts: {
+						forward: [
+							{
+								weaponId: "none",
+								weight: "light",
+								templateWeight: "light",
+								isFromTemplate: true,
+								canBeLinked: false,
+								isLinked: false,
+								canHaveOrbitalDiscount: false,
+								hasOrbitalDiscount: false,
+								specialMaterial: "none"
+							},
+							{
+								weaponId: "none",
+								weight: "light",
+								templateWeight: "light",
+								isFromTemplate: true,
+								canBeLinked: false,
+								isLinked: false,
+								canHaveOrbitalDiscount: false,
+								hasOrbitalDiscount: false,
+								specialMaterial: "none"
+							}
+						],
+						aft: [],
+						port: [
+							{
+								weaponId: "none",
+								weight: "light",
+								templateWeight: "light",
+								isFromTemplate: true,
+								canBeLinked: false,
+								isLinked: false,
+								canHaveOrbitalDiscount: false,
+								hasOrbitalDiscount: false,
+								specialMaterial: "none"
+							}
+						],
+						starboard: [
+							{
+								weaponId: "none",
+								weight: "light",
+								templateWeight: "light",
+								isFromTemplate: true,
+								canBeLinked: false,
+								isLinked: false,
+								canHaveOrbitalDiscount: false,
+								hasOrbitalDiscount: false,
+								specialMaterial: "none"
+							}
+						],
+						turret: []
+					},
+				}, // paramsReset
+				save_file: {
+					name: "",
+					url: ""
 				},
-				thrustersId: "none",
-				thrustersMaterialId: "none",
-				thrustersBoosterId: "none",
-				thrustersBoosterMaterialId: "none",
-				tierId:"1",
-				version:"1.0.1",
-				viId: "none",
-				viHoloProjectorId:"none",
-				viSkillExpanderId:"none",
-				weaponMounts: {
-					forward: [
-						{
-							weaponId: "none",
-							weight: "light",
-							templateWeight: "light",
-							isFromTemplate: true,
-							canBeLinked: false,
-							isLinked: false,
-							canHaveOrbitalDiscount: false,
-							hasOrbitalDiscount: false,
-							specialMaterial: "none"
-						},
-						{
-							weaponId: "none",
-							weight: "light",
-							templateWeight: "light",
-							isFromTemplate: true,
-							canBeLinked: false,
-							isLinked: false,
-							canHaveOrbitalDiscount: false,
-							hasOrbitalDiscount: false,
-							specialMaterial: "none"
-						}
-					],
-					aft: [],
-					port: [
-						{
-							weaponId: "none",
-							weight: "light",
-							templateWeight: "light",
-							isFromTemplate: true,
-							canBeLinked: false,
-							isLinked: false,
-							canHaveOrbitalDiscount: false,
-							hasOrbitalDiscount: false,
-							specialMaterial: "none"
-						}
-					],
-					starboard: [
-						{
-							weaponId: "none",
-							weight: "light",
-							templateWeight: "light",
-							isFromTemplate: true,
-							canBeLinked: false,
-							isLinked: false,
-							canHaveOrbitalDiscount: false,
-							hasOrbitalDiscount: false,
-							specialMaterial: "none"
-						}
-					],
-					turret: []
+				selectSampleShipSortOrder: "name",
+				selectedTab: "ship",
+				sources: [
+					{
+						id: "pw",
+						name: "Pact Worlds",
+					},
+					{
+						id: "som",
+						name: "Starship Operations Manual",
+					},
+				],
+			}
+		},
+		watch: {
+			params: {
+				handler: function() {
+					// localStorage.setItem("starfinder_ship", JSON.stringify(this.params));
 				},
-			}, // paramsReset
-			selectSampleShipSortOrder: "name",
-			sources: [
-				{
-					id: "pw",
-					name: "Pact Worlds",
-				},
-				{
-					id: "som",
-					name: "Starship Operations Manual",
-				},
-			],
+				deep: true
+			},
 		},
         /*
         |----------------------------------------------------------------------------------
@@ -1566,6 +1588,18 @@ function Ship(json) {
 					(this.params.hasReconfigurationSystem ? 30 : 0)
 				;
 			},
+			securityTotalOptions: function() {
+				var total = 0;
+				if (this.params.antiHackingSystemsId !== "none") total += 1;
+				if (this.params.antiPersonnelWeaponId !== "none") total += 1;
+				if (this.params.hasBiometricLocks) total += 1;
+				if (this.hasComputerCountermeasures) total += 1;
+				if (this.params.hasSelfDestructSystem) total += 1;
+				if (this.params.hasEmergencyAccelerator) total += 1;
+				if (this.params.hasHolographicMantle) total += 1;
+				if (this.params.hasReconfigurationSystem) total += 1;
+				return total;
+			},
             /*
             |------------------------------------------------------------------------------
             */
@@ -2201,6 +2235,7 @@ function Ship(json) {
 					weaponsBp: 0,
 					weaponsPcu: 0,
 					weaponMaterialsBp: 0,
+					weaponMounts: 0
 				};
 				for(position in this.weaponMounts) {
 					for(i in this.weaponMounts[position]) {
@@ -2210,6 +2245,7 @@ function Ship(json) {
 						totals.weaponsPcu += mount.weapon.pcuCost;
 						totals.weaponLinksBp += mount.linkCost;
 						totals.weaponMaterialsBp += mount.materialCost;
+						totals.weaponMounts += 1;
 					}
 				}
 				return totals;
@@ -2911,6 +2947,26 @@ function Ship(json) {
 				}
 				return result;
 			},
+			loadFileButton: function(event) {
+				var referencedFileControl = event.target.getAttribute("data-control-ref");
+				var referencedElement = document.getElementById(referencedFileControl);
+				referencedElement.click();
+			},
+			loadFileControl: function(event) {				
+				var app = this;
+				var refKey = event.target.id;
+				var files = app.$refs[refKey].files;
+				for (var i = 0, f; f = files[i]; i++) {
+					var reader = new FileReader();
+					reader.onload = function (_) {
+						var newShip = JSON.parse(this.result);
+						app.params = newShip;
+						app.fixMissingParamsValues();
+					};
+					app.save_file.name = f.name;
+					reader.readAsText(f);
+				}
+			},
             /*
             |------------------------------------------------------------------------------
             */
@@ -3013,6 +3069,23 @@ function Ship(json) {
             	this.setCustomFrame();
             	this.updateFrame();
             },
+			saveToFile: function(_) {
+				var app = this;
+				var str = JSON.stringify(app.params, null, "  ");
+				var parts = [str];
+				var blob = new Blob(parts, { type: 'application/json' });
+				var url = URL.createObjectURL(blob);
+				console.log("url", url);
+				console.log("app.save_file.name", app.save_file.name);
+				if (!app.save_file.name) {
+					app.save_file.name = "ship.json";
+				}
+				app.save_file.url = url;
+				var link = document.getElementById("file-save-link");
+				link.setAttribute("href", url);
+				link.click();
+				setTimeout(function () { URL.revokeObjectURL(url); }, 500);
+			},
             /*
             |------------------------------------------------------------------------------
             */

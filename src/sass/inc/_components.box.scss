@@ -68,10 +68,6 @@ ul.box__select {
 	margin: 1em 0 2em;
 }
 
-.box--json * + * {
-	margin-top: 1em;
-}
-
 @media (min-width: $breakpoint-md) {
 	.box__select--computerCountermeasures {
 		display: flex;
