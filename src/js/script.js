@@ -249,18 +249,9 @@ function Ship(json) {
         |----------------------------------------------------------------------------------
         */
 		data: function() {
-			var storedShip = localStorage.getItem("starfinder_ship");
-			console.log("ship", storedShip);
-			var storedShip = null;
-			if (storedShip) {
-				console.log("parsing ship data");
-				storedShip = JSON.parse(storedShip);
-			}
-			console.log("storedShip", storedShip);
-			return {
+			var data = {
 				data: json,
 				json: "",
-				params: storedShip || {},
 				// paramsReset: {"ablativeArmorId":"none","ablativeArmorByPosition":{"forward":0,"aft":0,"port":0,"starboard":0},"antiHackingSystemsId":"none","antiPersonnelWeaponId":"none","armorId":"mk-8","armorMaterialId":"none","computerCountermeasures":{"alarm":false,"fakeShell":false,"feedback":false,"firewall":false,"lockout":false,"shockGridId":"none","wipe":false},"computerId":"mk-3-trinode","crewQuartersId":"luxurious","crewSkills":{"captain":{"countOfficers":0,"hasRole":true,"skills":{"bluff":{"modifier":0,"ranks":0},"computers":{"modifier":0,"ranks":0},"diplomacy":{"modifier":0,"ranks":0},"engineering":{"modifier":0,"ranks":0},"gunnery":{"modifier":0},"intimidate":{"modifier":0,"ranks":0},"perception":{"modifier":0,"ranks":0},"piloting":{"modifier":0,"ranks":0}}},"engineer":{"countOfficers":1,"countOfficerCrew":0,"hasRole":true,"skills":{"computers":{"modifier":0,"ranks":0},"engineering":{"modifier":0,"ranks":0}}},"gunner":{"countOfficers":1,"countOfficerCrew":0,"hasRole":true,"skills":{"computers":{"modifier":0,"ranks":0},"engineering":{"modifier":0,"ranks":0},"gunnery":{"modifier":0}}},"pilot":{"countOfficers":1,"countOfficerCrew":0,"hasRole":true,"skills":{"computers":{"modifier":0,"ranks":0},"diplomacy":{"modifier":0,"ranks":0},"engineering":{"modifier":0,"ranks":0},"gunnery":{"modifier":0},"intimidate":{"modifier":0,"ranks":0},"piloting":{"modifier":0,"ranks":0}}},"scienceOfficer":{"countOfficers":1,"countOfficerCrew":0,"hasRole":true,"skills":{"computers":{"modifier":0,"ranks":0},"life-science":{"modifier":0,"ranks":0},"physical-science":{"modifier":0,"ranks":0}}},"chiefMate":{"countOfficers":1,"countOfficerCrew":0,"hasRole":false,"skills":{"acrobatics":{"modifier":0,"ranks":0},"athletics":{"modifier":0,"ranks":0}}},"magicOfficer":{"countOfficers":1,"countOfficerCrew":0,"hasRole":false,"skills":{"mysticism":{"modifier":0,"ranks":0}}}},"ctTim":0,"ctTimAll":0,"customFrameBaseId":"light-freighter","customComponents":[],"dedicatedComputerId":"basic-computer","defensiveCountermeasuresId":"mk-7","defensiveCountermeasuresMaterialId":"none","deflectorShieldId":"none","driftEngineId":"signal-basic","expansionBayIds":["cargo-hold","drop-pod","escape-pods","guest-quarters-luxurious","medical-bay","passenger-seating","none"],"fortifiedHullId":"none","frameId":"battleship","hasAlgalShielding":0,"hasAutoDestruct":0,"hasBiometricLocks":0,"hasColonyShipFramework":0,"hasConsciousnessUplink":0,"hasCrew":1,"hasDataNet":0,"hasEmergencyAccelerator":0,"hasHiveJoining":0,"hasHolographicMantle":0,"hasPowersap":0,"hasReconfigurationSystem":0,"hasRootSystem":0,"hasSelfDestructSystem":0,"hasSpaceStationFramework":0,"isSetDefaultCrewSkillValues":0,"isUseStrictRules":1,"powerCoreIds":["gateway-ultra","none","none"],"powerCoreSpecialMaterials":["none","none","none"],"networkNodeId":"none","reinforcedBulkheadId":"none","roboticAppendageId":"none","secondaryComputerId":"basic-computer","sensorsId":"none","sensorsMaterialId":"none","shieldType":"shields","shieldsByPosition":{"forward":0,"aft":0,"port":0,"starboard":0},"shieldsId":"none","shipConcept":"The product of a decade of Ringworks research and development, the Specter represents the first known successful use of quantum defender technology on a capital ship.","shipName":"Ringworks Specter","sources":{"pw":true,"som":true},"thrustersId":"g6","thrustersMaterialId":"none","thrustersBoosterId":"none","thrustersBoosterMaterialId":"none","tierId":"16","version":"1.0.1","viId":"none","viHoloProjectorId":"none","viSkillExpanderId":"none","weaponMounts":{"forward":[{"weaponId":"none","weight":"capital","templateWeight":"capital","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}],"aft":[{"weaponId":"none","weight":"light","templateWeight":"light","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}],"port":[{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"light","templateWeight":"light","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}],"starboard":[{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"light","templateWeight":"light","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}],"turret":[{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"},{"weaponId":"none","weight":"heavy","templateWeight":"heavy","isFromTemplate":true,"canBeLinked":false,"isLinked":false,"canHaveOrbitalDiscount":false,"hasOrbitalDiscount":false,"specialMaterial":"none"}]}},
 				paramsReset: {
 					ablativeArmorId: "none",
@@ -565,11 +556,24 @@ function Ship(json) {
 					},
 				],
 			}
+			var storedShip = localStorage.getItem("starfinder_ship");
+			console.log("ship", storedShip);
+			if (storedShip) {
+				console.log("parsing ship data");
+				data.params = JSON.parse(storedShip);
+				console.log("storedShip", storedShip);
+			}
+			else {
+				data.params = cloneObject(this.paramsReset);
+			}
+			return data;
 		},
 		watch: {
 			params: {
 				handler: function() {
-					// localStorage.setItem("starfinder_ship", JSON.stringify(this.params));
+					var data = JSON.stringify(this.params);
+					console.log("saving starship", data.frameId);
+					localStorage.setItem("starfinder_ship", data);
 				},
 				deep: true
 			},
@@ -2868,17 +2872,6 @@ function Ship(json) {
             /*
             |------------------------------------------------------------------------------
             */
-			initParams: function() {
-				if (window.JTOStarshipSheetModel === undefined) {
-					this.params = cloneObject(this.paramsReset);
-				} else {
-					this.params = cloneObject(window.JTOStarshipSheetModel);
-				}
-
-			},
-            /*
-            |------------------------------------------------------------------------------
-            */
 			inputSampleShipParams: function() {
 				var sampleShipSelect = document.getElementById("sampleShipSelect");
 				var sampleShipId = sampleShipSelect.value;
@@ -3414,16 +3407,7 @@ function Ship(json) {
             /*
             |------------------------------------------------------------------------------
             */
-		},
-        /*
-        |----------------------------------------------------------------------------------
-        */
-		beforeMount: function() {
-			this.initParams();
-		},
-        /*
-        |----------------------------------------------------------------------------------
-        */
+		}
 	});
 	
 } // Ship class
