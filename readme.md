@@ -2,44 +2,60 @@
 
 A single-page web app for building starships for the Starfinder RPG, by Paizo Inc.
 
-## Production and Development Modes
+# Installation and Set Up
 
-For development, work on the base folder. Run `grunt watch` to compile in dev mode. Run `grunt` to compile once for production deployment.
+To set up the environment for this project:
 
-When ready to deploy, run Grunt. Minified files will appear in the `app` folder. Just copy this folder to the server.
+1. Make sure you have [Node](https://nodejs.org/) installed
+1. Install grunt globally by running `npm install -g grunt`
+1. Install sass globally by running `npm install -g sass`.
 
-To use Vue.js browser extension (dev mode) add this script towards end of `index.php`:
+    If this causes an error, you can try installing Ruby, then running `gem install sass` instead.
 
-    <script src="https://unpkg.com/vue"></script>
-
-For production, use:
-
-    <script src="vendor/vue/vue.min.js"></script>
-
-### Dependencies: Sass
-
-Run `sass` to compile CSS. Sass is not included in Grunt watch; I didn't think styles would change that much. May need to create `/css` folder manually. To install sass, make sure Ruby is installed, then:
-
-    gem install sass
-
-Note that I tried `npm install -g sass`, but this causes an error. Then, to run sass:
-
-    sass --watch sass:css --style compressed
-
-### Dependencies: vue.js and clipboard.js
-
-Set up these files:
-
+1. Refresh your environment variables. For powershell, run `refreshenv`
+1. Install the local modules by running `npm install`
+1. Set up the dependencies for [vuejs](https://v2.vuejs.org/v2/guide/installation.html). The website currently uses Vue v2.x.
+    1. Download the Production version to get the minified version
+    2. Copy the file to `src/vender/vue/vue.min.js`
+    3. For development, we'll simply load it from `https://unpkg.com/vue` as seen in the next section.
+1. Set up the dependencies for [clipboardjs](https://clipboardjs.com/).
+    1. Download the zip file and unzip
+    2. Copy `clipboard.js-master/dist/clipboard.min.js` from the unzipped folder to `src/vendor/clipboard/dist/clipboard.min.js`
+1. Your project should now contain the following files:
+    ```
     vendor/vue/vue.min.js
     vendor/clipboard/dist/clipboard.min.js
+    ```
 
-Visit respective vendor sites to get files.
+## Debugging in Development
+1. To compile the CSS, run `sass`. You may need to create the `/css` folder manually. Sass is not included in Grunt watch; I didn't think styles would change that much. 
+    ```shell
+    cd src
+    sass --watch sass:css --style compressed
+    ```
+1. To use Vue.js browser extension in dev mode, uncomment the Development section towards end of `index.html`. Make sure the Production section is commented out. For best results, make sure the version matches what is in the vue.min.js production file.
+    ```html
+    <script src="https://unpkg.com/vue@2.7.13"></script>
+    ```
+1. To initialize the dist folder, run `grunt`, then run `grunt watch` to rebuild when files are changed.
 
-Might also need to copy vendor folder into app.
 
-### Images
 
-SVGs are embedded, so no probs. Might need to copy /img to /app
+## Running
+Due to CORS errors with loading the ship-builder.json, to test on your own machine, you you will need to run the project from a local server.
+1. Run `npm install http-server -g` to install a global package that can create a local server
+1. Run `http-server` to run the server. Add the option `-o /dist/index.html` to also launch the site in a browser.
+
+## Building for Production
+1. Compile by running `grunt` from the base folder. 
+
+   Minified files will appear in a `dist` folder. 
+1. Make sure that `/dist` contains copies of the `/img`, `/css` and `/vender` folders. If not, they will need to be manually copied over.
+1. To use Vue.js browser extension in production mode, uncomment the Production section towards end of `index.html`. Make sure the Development section is commented out.
+    ```html
+    <script src="vendor/vue/vue.min.js"></script>
+    ```
+1. Copy the `/app` folder to the server.
 
 ### File structure
 
@@ -53,7 +69,7 @@ Expected file structure of /app
     .htaccess
     index.html
     
-### Data
+# Data
 
 A few things to note:
 

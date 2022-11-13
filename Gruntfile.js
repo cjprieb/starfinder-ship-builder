@@ -3,6 +3,25 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		// copy files
+		copy: {
+			img: {
+				files: [{ 
+					cwd: 'src/img',
+					src: '**/*', 
+					dest: 'dist/img' ,
+					expand: true
+				}]
+			},
+			vendor: {
+				files: [{ 
+					cwd: 'src/vendor',
+					src: '**/*', 
+					dest: 'dist/vendor' ,
+					expand: true
+				}]
+			}
+		},
 		// minify JS
 		uglify: {
 			options: {
@@ -72,9 +91,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-minjson');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	// Default task(s).
-	grunt.registerTask('default', ['uglify', 'cssmin', 'minjson', 'htmlmin']);
-	grunt.registerTask('watch', ['watch']);
+	grunt.registerTask('default', ['copy:img','copy:vendor','uglify', 'cssmin', 'minjson', 'htmlmin']);
 
 };
